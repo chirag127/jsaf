@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 — Three Portfolio Projects That Get You Hired</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs"></script>
+<script defer src="../js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">Stuck to Shipper</a>
+  <button id="export-pdf" class="no-print" style="font-family:var(--font-ui);font-size:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--fg);cursor:pointer">Save as PDF</button>
+</div></header>
+<main><article>
+<div class="meta">
+  <span class="pill">Article 06 / 12</span>
+  <span class="pill">~22 min</span>
+  <span class="pill">Projects · GitHub · Evidence</span>
+</div>
+<h1>Three portfolio projects that get you hired</h1>
+<p class="lead">In 2026, the thing that separates you from the crowd is not a certificate. It is a system you shipped that you can defend decision by decision. Three projects, in a ladder, each one building on the last. The first is your flagship. The second maps to the interview. The third proves you know the decision framework. Total build time: about six to nine months, spread across the roadmap in Article 5.</p>
+
+<h2>Project one: The CPQ Knowledge Copilot (your flagship)</h2>
+<p>This is the project a non-SAP candidate cannot credibly claim. You build a retrieval-augmented generation system over SAP CPQ and S/4HANA documentation, plus a synthesized set of demo data. Quote objects, discount rules, approval workflows. A user asks, "Why did this quote fail approval?" or "What is the discount rule for this product family?" The system retrieves the relevant document chunk, re-ranks it, assembles a prompt, and returns a grounded answer with a citation.</p>
+
+<pre class="mermaid">
+flowchart LR
+    A[User question] --> B[Hybrid retrieval]
+    B --> B1[BM25 keyword]
+    B --> B2[pgvector semantic]
+    B1 --> C[Merge + re-rank]
+    B2 --> C
+    C --> D[Assemble prompt]
+    D --> E[LLM generates]
+    E --> F[Grounded answer + citation]
+    G[Golden QA set ~50] --> H[LLM-as-judge eval]
+    H -->|precision/recall| F
+</pre>
+
+<p>The technical depth is where the signal is. Choose a chunk size and explain why. Use hybrid retrieval, not pure vector, and explain when hybrid beats vector. Build a golden set of about 50 question-answer pairs from your real support experience. Run an LLM-as-judge evaluation and report the metrics. Containerize the whole thing with Docker. Deploy it on a free cloud tier. Write a README that documents your latency and cost budget. That README is the thing an interviewer reads first.</p>
+
+<div class="callout"><span class="title">Why this project wins</span>
+It is a domain moat. A generic LLM app proves you watched a course. A CPQ-aware RAG system with an eval harness and a citation trail proves you can take AI into a structured, process-bound, audited enterprise environment. That is exactly the job.</div>
+
+<h2>Project two: The Support-Ticket Triage and Deflection Agent</h2>
+<p>This is your literal current domain, turned into a portfolio piece. You build a system that classifies incoming support tickets by intent, routes them by severity, and drafts responses with citations. For simple, safe fixes it runs an agent loop with clear stopping conditions. You build a golden set from anonymized ticket categories and report precision and recall per class.</p>
+
+<p>Here is the part that makes this project worth its weight. This project is a mock of the system-design interview round. When an interviewer says "design a support assistant," you do not describe a hypothetical. You point to the repo. You explain why you chose this routing, where it fails, what your stopping conditions are, and what you would change if retrieval returned the wrong context. You practice the exact interview scenario inside your own portfolio. That is a rare advantage. Most candidates describe. You demonstrate.</p>
+
+<h2>Project three: The RAG-versus-Fine-tune Benchmark Report</h2>
+<p>Pick one dataset. Build two pipelines. One uses retrieval-augmented generation. One fine-tunes a model. Measure cost, latency, and answer quality on the same evaluation set. Publish the write-up and the code. This proves you know the 2026 decision framework, which interviewers explicitly probe. When to use RAG. When to fine-tune. When to do neither and just prompt. And it proves you can run an evaluation harness, which is the skill that separates the people who shipped from the people who prototyped.</p>
+
+<pre class="mermaid">
+flowchart TD
+    Q{What is the task?} -->|Knowledge changes often| R[RAG]
+    Q -->|Must cite sources| R
+    Q -->|Private, large corpus| R
+    Q -->|Change behavior/format/style| F[Fine-tune]
+    Q -->|Cut context-stuffing cost| F
+    Q -->|Static, small, well-known| P[Just prompt]
+    R --> M[Measure on golden set]
+    F --> M
+    P --> M
+    M --> RPT[Write the benchmark report]
+</pre>
+
+<h2>The GitHub hygiene that matters</h2>
+<p>One repository per project. Each has a top-level README that tells the whole story. The problem. An architecture diagram. The key decisions with their trade-offs. The evaluation results in a table. And a short section titled "What I would change next." A single portfolio index links all three. Recent commit cadence matters more than star count. It shows you are still practicing, not that you did one push two years ago.</p>
+
+<div class="tablewrap"><table>
+<thead><tr><th>Repo</th><th>Content</th><th>Signal it sends</th></tr></thead>
+<tbody>
+<tr><td>cpq-knowledge-copilot</td><td>Flagship RAG system + evals</td><td>Domain moat + shipping discipline</td></tr>
+<tr><td>ticket-triage-agent</td><td>Mock of the system-design round</td><td>You can do the interview's exact scenario</td></tr>
+<tr><td>rag-vs-finetune-bench</td><td>Benchmark write-up</td><td>You know the decision framework</td></tr>
+<tr><td>ml-portfolio</td><td>Course artifacts, brief</td><td>Breadth, without noise</td></tr>
+<tr><td>mlops-lab</td><td>Docker + K8s serving experiment</td><td>You can deploy</td></tr>
+</tbody>
+</table></div>
+
+<h2>What to avoid</h2>
+<p>Fifty half-finished notebooks with no README. Course code copied with no analysis of your own. No evaluation artifacts. These all send the same message. You did not finish things. In 2026, an unfinished repo is worse than no repo, because it tells the reader you cannot ship. Three finished projects beat thirty started ones, every time.</p>
+
+<h2>The one-sentence close</h2>
+<p>Certificates say you learned. Repos say you built. The 2026 screen reads repos. Make the three in this article the center of everything you do for the next six to nine months, and the interviews in Article 10 become a demonstration instead of a test.</p>
+</article></main>
+<footer>Article 06 · Three portfolio projects · <a href="./05-learning-roadmap.html">prev</a> · <a href="./07-legal-playbook.html">next: the legal playbook</a></footer>
+</body>
+</html>

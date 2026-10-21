@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 — SAP CPQ in the AI Era</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs"></script>
+<script defer src="../js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">Stuck to Shipper</a>
+  <button id="export-pdf" class="no-print" style="font-family:var(--font-ui);font-size:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--fg);cursor:pointer">Save as PDF</button>
+</div></header>
+<main><article>
+<div class="meta">
+  <span class="pill">Article 04 / 12</span>
+  <span class="pill">~20 min</span>
+  <span class="pill">SAP · Joule · CPQ market</span>
+</div>
+<h1>SAP CPQ in the AI era</h1>
+<p class="lead">Is SAP CPQ dying? No. Is it being reshaped by AI? Completely. And the reshaping is exactly what makes your knowledge valuable instead of obsolete. Here is what is actually changing, with the specific product names and release notes to back it up.</p>
+
+<h2>The one thing to memorize: AI sits in front of the rules engine</h2>
+<p>This is the structural insight that every CPQ practitioner is converging on. AI handles the conversational layer. It takes a natural-language need and drafts a configuration. It guides pricing. It assembles documents. But the deterministic constraint solver, the part that guarantees a configuration is actually buildable, does not get replaced. It stays rule-based. And that is precisely where CPQ domain knowledge stays valuable.</p>
+
+<p>In one line. AI sells and drafts. The rules engine guarantees. You know the guarantees. That is your moat.</p>
+
+<h2>What SAP itself is doing</h2>
+<p>At TechEd in November 2025, SAP committed to 400 Business AI use cases by the end of the year, including 40 Joule Agents built on 2,100 Joule Skills. Three hundred of those use cases are already benchmarked at a value-add of 441 million euros for a company with 10 billion euros in revenue. At Sapphire 2026, SAP is touting a reimagined Joule experience and a new SAP Business Suite that unifies AI, data, and apps.</p>
+
+<p>For CPQ users, the relevant piece is the Quoting Assistant. It is a Joule use case that automates quote creation, product configuration, upsell recommendations, and document assembly. It is grounded in the SAP Knowledge Graph, so it understands products, price conditions, account hierarchies, and quote lifecycle objects. Not just text. That is why it is more powerful than a generic chatbot pointed at your data.</p>
+
+<h2>The detail that tells you where the market is going</h2>
+<p>In CPQ release 2608, SAP obsoleted the older CPQ-to-CX AI integration. That was the first-generation, bolt-on AI path that did cross-sell and discount recommendations through ingestion and inference mapping. It is gone, consolidated into the Joule and platform AI stack. Read that twice. The first-gen CPQ-native AI is being absorbed into a platform question.</p>
+
+<div class="callout"><span class="title">What this means for a support engineer</span>
+Administrators are told to audit whether their tenants still depend on the old CX AI recommendation behavior. That audit is day-one support work and it is a differentiator in any AI-era interview. If you can walk into a role and say I know which AI features are live in this tenant version and which ones were deprecated in 2608, you are ahead of every pure-CS candidate who has never touched an ERP.</div>
+
+<h2>The competitive field is moving too</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Vendor</th><th>The AI move</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Salesforce</td><td>Moved from classic CPQ to Agentforce Revenue Management</td><td>Legacy CPQ frozen for new features</td></tr>
+<tr><td>Oracle CPQ</td><td>Configuration AI-Assist Agent in release 26C</td><td>Gartner Leader, 9th year</td></tr>
+<tr><td>Tacton</td><td>AI Product Modeling Assistant</td><td>Shipped May 2026</td></tr>
+<tr><td>Conga</td><td>Acquired PROS B2B, a pricing-intelligence business</td><td>Closed Feb 2026</td></tr>
+<tr><td>ServiceNow</td><td>Entered the CPQ market via the Logik.ai acquisition</td><td>Closed Q2 2025</td></tr>
+</tbody>
+</table></div>
+
+<p>The market is growing, not shrinking. One estimate puts CPQ at about 4 billion dollars in 2026, rising toward 10 billion by 2033. The most durable trend is AI for the people who build and maintain configuration models, not just the buyers. That is the modeler lane, and it is an engineering lane.</p>
+
+<h2>How AI is reshaping the support role itself</h2>
+<p>SAP runs agentic AI in its own customer support. The Auto Response Agent resolves known issues at an 80 percent confidence threshold. The pattern is instant resolution first, then humans for the exceptions. That is the template for any L1 and L2 CPQ support desk, including the one TCS delivers. The most exposed work is ticket triage and known-issue handling. The least exposed is integration debugging, Quote 2.0 migration issues, and admin governance. Know which side of that line your daily work sits on. If you are mostly on the exposed side, you have more reason to move, not less.</p>
+
+<h2>What to learn on the SAP side specifically</h2>
+<p>SAP's developer catalog has free, dedicated tracks. Around 192 AI tutorials, 284 machine learning tutorials, 8 Joule tutorials, 57 on AI Core, and over 1,300 on the Business Technology Platform. The natural, employer-relevant learning lane is right there, free, and it is the depth leg of the T-shape in Article 12. The key credential to plan for is the SAP Certified Associate for Generative AI Developer, code C-A-I-G, which covers the BTP, the AI Core, and the Generative AI Hub. In 2026, SAP is also shifting its exams from multiple choice to practical, open-book performance tests. The credential now tests what you can do in a real system, not what you memorized.</p>
+
+<h2>The takeaway</h2>
+<p>CPQ is evolving, not dying. The product keeps shipping, with Quote 2.0 as the direction of travel and new S/4HANA integration flows in 2608 and 2609. The low-end niche is narrowing. Simple shops can use Sales Cloud quoting with Advanced Variant Configuration instead. But the complex, high-stakes, audit-sensitive configurations, which is where you are, are where AI and CPQ intersect and where a domain expert becomes the most expensive person in the room. Your job is to be the bridge, not the casualty.</p>
+</article></main>
+<footer>Article 04 · SAP CPQ in the AI era · <a href="./03-five-paths.html">prev</a> · <a href="./05-learning-roadmap.html">next: the learning roadmap</a></footer>
+</body>
+</html>

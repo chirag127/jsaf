@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03 — Five Paths, Ranked by Risk</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs"></script>
+<script defer src="../js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">Stuck to Shipper</a>
+  <button id="export-pdf" class="no-print" style="font-family:var(--font-ui);font-size:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--fg);cursor:pointer">Save as PDF</button>
+</div></header>
+<main><article>
+<div class="meta">
+  <span class="pill">Article 03 / 12</span>
+  <span class="pill">~20 min</span>
+  <span class="pill">Career lanes · Timelines</span>
+</div>
+<h1>Five paths, ranked by risk</h1>
+<p class="lead">You have five realistic lanes out of a TCS SAP CPQ support seat. They differ in how fast you can start, how risky they are, and where they end. Pick one primary lane. Run a secondary one in parallel. Do not run all five at once. That is how you finish with five half projects and no job.</p>
+
+<h2>How to read the ranking</h2>
+<p>Lowest risk means you keep your salary while you move. Highest upside means the ceiling is higher, but you give up more stability. The ranking is from the seat you are sitting in, not from an abstract perfect world.</p>
+
+<table>
+<thead><tr><th>Path</th><th>Time to first move</th><th>Risk</th><th>Upside</th><th>Best if</th></tr></thead>
+<tbody>
+<tr><td>1. Internal TCS AI pod</td><td>3-6 months</td><td>Lowest</td><td>₹9-15 LPA</td><td>You want zero income risk</td></tr>
+<tr><td>2. MLOps / AI infra</td><td>6-12 months</td><td>Low</td><td>₹25-50 LPA</td><td>You like Linux and clouds</td></tr>
+<tr><td>3. GenAI / LLM engineer</td><td>9-18 months</td><td>Medium</td><td>₹20-70 LPA</td><td>You want the highest ceiling</td></tr>
+<tr><td>4. Global-remote applied AI</td><td>12-24 months</td><td>Medium-high</td><td>₹35-1.5Cr+ INR</td><td>You can build strong evidence</td></tr>
+<tr><td>5. Freelance / consulting</td><td>Parallel, 2-3 case studies</td><td>Higher</td><td>$100-250/hr</td><td>You have 2-3 shipped projects</td></tr>
+</tbody>
+</table>
+
+<h2>Path 1: The internal TCS AI pod (lowest risk)</h2>
+<p>This is the move that costs you nothing to start. TCS has a 2026 skill-based AI hiring drive. Two to four years of experience, 9 LPA and up, a 50 thousand joining bonus. You do not quit. You do not lose benefits. You re-skill on the clock, in a system that pays you while you learn. The catch is that the drive is competitive and the pods are real, not decorative. Article 11 goes deep on this lane. Do it first, even if you plan to leave later. It lowers every other path.</p>
+
+<h2>Path 2: MLOps and AI infrastructure (the quiet winner)</h2>
+<p>You are already touching servers, logs, and integrations in support. MLOps is the direct continuation of that. Containerize a model. Deploy it on a cloud. Watch it in production. Learn about drift, latency, and cost. This is under-reported in salary databases, but the market signal is clear. Engineers who can build model-serving infrastructure and automated retraining pipelines are in short supply everywhere. Highest starting salary of the engineering paths because of the DevOps overlap.</p>
+
+<h2>Path 3: GenAI and LLM engineering (the ceiling)</h2>
+<p>The fastest-growing and highest-paying role in 2026. RAG systems, agent architectures, fine-tuning. This is where your CPQ domain becomes a weapon. Nobody building a generic LLM app understands quote-to-cash. You do. The cost is that it is the longest lane. Nine to eighteen months of part-time study, and you still need a shipped project to prove it. Article 5 is the month-by-month plan for exactly this path.</p>
+
+<h2>Path 4: Global-remote applied AI (the bypass)</h2>
+<p>The frontier labs hire in India, pay in global bands, and skip the visa question entirely. This is the realistic onsite-equivalent income in one to two years. It bypasses H-1B lottery and the 100 thousand dollar fee discussed in Article 8. The entry bar is high. You need 2 to 3 years of production AI work, or a flagship project strong enough to stand in for it. This is not your first move. It is your second or third.</p>
+
+<h2>Path 5: Freelance and consulting (the side engine)</h2>
+<p>You do not leave your day job for this one. You run it alongside, once you have two to three case studies. Prompt engineering runs 75 to 100 dollars an hour at entry. Senior AI implementation runs 150 to 250 dollars an hour. India-sourced work has a floor of about 3,500 dollars per project. You price by value, not by hours, once you can document a client's ROI. Article 9 covers the legal and tax setup so this income is clean.</p>
+
+<h2>How the five paths connect</h2>
+<pre class="mermaid">
+flowchart LR
+    P1[1 · Internal pod] --> P2[2 · MLOps]
+    P2 --> P3[3 · LLM engineer]
+    P3 --> P4[4 · Global remote]
+    P3 --> P5[5 · Freelance]
+    P5 -.->|funds the gap| P3
+    P4 -.->|USD income| P3
+</pre>
+<p>Read the diagram left to right. The internal pod funds and de-risks everything after it. Freelance and global-remote are exit ramps that unlock later, not starting gates. You do not have to do all five. You pick the one that matches how much risk your life can carry this year.</p>
+
+<h2>The decision you make today</h2>
+<p>Circle one number in the table above. That is your lane. The next four articles are the detailed playbooks for the lanes most TCS support engineers actually pick. One more sentence to close this one. The single biggest career mistake is to run five lanes at once and finish none. One lane. One shipped project. One interview loop. That is the whole game.</p>
+</article></main>
+<footer>Article 03 · Five paths, ranked by risk · <a href="./02-india-ai-market.html">prev</a> · <a href="./04-sap-cpq-ai-era.html">next: SAP CPQ in the AI era</a></footer>
+</body>
+</html>

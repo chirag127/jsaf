@@ -1,0 +1,30 @@
+# --- Agnes local working dir (experiments, generated PDFs, scratch) ---
+.agnes/
+**/.agnes/
+
+# --- Book build artifacts (regenerated from posts/ via tools/) ---
+The-Stuck-to-Shipper-print.html
+
+# --- Diagnostics / scratch (headless-Chrome probes) ---
+*t3-*.html
+*t3-*.txt
+*t4-*.html
+*sz-*.html
+*iso-*.html
+*art*.html
+*test_min*.html
+*-print-dom.txt
+*-print-err.txt
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# --- Node / build ---
+node_modules/
+npm-debug.log*

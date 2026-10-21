@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 — The 14 to 18 Month Learning Roadmap</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs"></script>
+<script defer src="../js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">Stuck to Shipper</a>
+  <button id="export-pdf" class="no-print" style="font-family:var(--font-ui);font-size:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--fg);cursor:pointer">Save as PDF</button>
+</div></header>
+<main><article>
+<div class="meta">
+  <span class="pill">Article 05 / 12</span>
+  <span class="pill">~24 min</span>
+  <span class="pill">Courses · Certs · Timeline</span>
+</div>
+<h1>The 14 to 18 month learning roadmap</h1>
+<p class="lead">This is the machine. It assumes you work 9.5 hours a day at TCS and can carve out 8 to 10 hours a week for learning. Two evenings of two hours, one weekend block of four hours. That is about 40 hours a month, which is one portfolio-quality project every three months. The entire hard cost of this plan is about 150 to 260 dollars. Everything else is free.</p>
+
+<h2>The skill you actually need, and the skill you do not</h2>
+<p>You do not need to know everything about AI. The 2026 applied market rewards a narrow, verifiable stack. Solid intermediate Python, then classical machine learning intuition, then large language model application engineering, then one cloud deployment, then one deep domain project. The stack in order, not the textbook in order.</p>
+
+<div class="callout"><span class="title">Skip, with confidence</span>
+Deep linear algebra proofs, classical computer vision research, robotics, and reinforcement learning theory. A light pass is fine. These do not show up in the applied interview loops we are targeting. Your hours are better spent shipping one RAG system than proving a gradient identity.</div>
+
+<h2>The month-by-month plan</h2>
+<pre class="mermaid">
+gantt
+    title "14-18 month roadmap"
+    dateFormat  YYYY-MM
+    section Foundation
+    Python solid + ML Spec C1        :a1, 2026-11, 2M
+    ML Spec C2-C3 + fast.ai PDL      :a2, 2027-01, 2M
+    section Deep + LLM
+    DL Specialization (5 courses)    :b1, 2027-03, 3M
+    GenAI / LLM applied track        :b2, 2027-06, 3M
+    CPQ Knowledge Copilot v1         :b3, 2027-07, 2M
+    section Deploy + SAP
+    AWS AI Practitioner exam         :c1, 2027-09, 1M
+    SAP Joule / BTP AI tutorials     :c2, 2027-10, 2M
+    section Ship + Interview
+    Ticket-triage bot + RAG report   :d1, 2027-12, 2M
+    GitHub polish + resume           :d2, 2028-02, 2M
+    Interview grind                  :d3, 2028-03, 3M
+</pre>
+
+<h2>The courses, with names and costs</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Course</th><th>Platform</th><th>Cost</th><th>Duration</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>AI for Everyone</td><td>Coursera · Andrew Ng</td><td>free audit</td><td>7 hours</td><td>Orientation. Do it once.</td></tr>
+<tr><td>Machine Learning Specialization</td><td>Coursera · Ng + team</td><td>free audit, ~$49-79 cert</td><td>~2 months @ 10 hr/wk</td><td>The ML core. 852k enrolled, 4.9/5.</td></tr>
+<tr><td>Deep Learning Specialization</td><td>Coursera · Ng + team</td><td>free audit, ~$49-79 cert</td><td>~3 months @ 10 hr/wk</td><td>Includes transformers, HuggingFace, NLP. Not legacy.</td></tr>
+<tr><td>Practical Deep Learning for Coders</td><td>fast.ai · Jeremy Howard</td><td>free</td><td>~5 weeks</td><td>Hands-on counterweight to the Coursera theory.</td></tr>
+<tr><td>Generative AI with LLMs</td><td>Coursera · HSE University</td><td>free audit</td><td>~10-12 weeks</td><td>The LLM theory leg.</td></tr>
+<tr><td>LangChain / RAG / Agents short courses</td><td>DeepLearning.AI</td><td>free</td><td>3-8 hrs each</td><td>The applied LLM leg.</td></tr>
+<tr><td>AWS Certified AI Practitioner</td><td>AWS</td><td>$100 exam</td><td>3-4 weeks prep</td><td>Cheapest verified cloud AI credential.</td></tr>
+<tr><td>SAP BTP / Joule / AI Core tutorials</td><td>developers.sap.com</td><td>free</td><td>1-2 months</td><td>Your domain depth leg.</td></tr>
+</tbody>
+</table></div>
+
+<div class="callout ok"><span class="title">The cheapest entry credential</span>
+The AWS Certified AI Practitioner is 100 dollars, 90 minutes, 65 questions, valid for three years. It is the single cheapest way to put a cloud AI credential on your resume. AWS's own recommended next step is the ML Engineer-Associate, but you do not need that one to get hired. One cloud credential plus a shipped project is the 2026 bar.</div>
+
+<h2>What you should know at each gate</h2>
+<p>Gate one, after two months. You write Python without a tutorial open. You understand a training split, bias-variance, and when a model overfits. Gate two, after five months. You can explain why attention replaced RNNs, what an embedding is, and the difference between a generative and a discriminative model. Gate three, after ten months. You have a RAG pipeline you built, you have evaluated it on a golden set of about 50 questions, and you can explain why you chose your chunk size. Gate four, after fourteen months. Your three projects are on GitHub with clean READMEs, and your resume has been rewritten in the new vocabulary.</p>
+
+<h2>The habit that halves the project cost</h2>
+<p>Build the portfolio from your own work artifacts. Every ticket pattern you see at TCS becomes a dataset sketch. Every customer question you answer becomes an evaluation pair. Keep a golden-qa file open on your machine. Add one real CPQ question and your answer to it, every week. In twelve months, you have a private evaluation set that no course gives you. That is the single highest-leverage habit in this entire book.</p>
+
+<h2>The math of the money</h2>
+<p>The total hard cost is roughly 100 dollars for the AWS exam, plus 50 to 160 dollars if you pay for one Coursera certificate and one more exam. That is the 150 to 260 dollar range. Course audits are free. fast.ai is free. The SAP tutorials are free. The Kaggle micro-courses are free. You are not paying for knowledge in this plan. You are paying for a credential and a small margin of convenience. If money is tight, skip the paid certificate. The GitHub ships the message, not the badge.</p>
+</article></main>
+<footer>Article 05 · The 14 to 18 month learning roadmap · <a href="./04-sap-cpq-ai-era.html">prev</a> · <a href="./06-portfolio-projects.html">next: three projects</a></footer>
+</body>
+</html>

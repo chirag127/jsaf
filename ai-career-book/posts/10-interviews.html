@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 — How to Pass the AI Interview in 2026</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs"></script>
+<script defer src="../js/app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="inner">
+  <a class="brand" href="../index.html">Stuck to Shipper</a>
+  <button id="export-pdf" class="no-print" style="font-family:var(--font-ui);font-size:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--fg);cursor:pointer">Save as PDF</button>
+</div></header>
+<main><article>
+<div class="meta">
+  <span class="pill">Article 10 / 12</span>
+  <span class="pill">~22 min</span>
+  <span class="pill">Interview loop · Answer structure</span>
+</div>
+<h1>How to pass the AI interview in 2026</h1>
+<p class="lead">The 2026 AI interview is not the data science interview you may have seen in 2023. It has a specific shape, and the round that separates people who shipped from people who prototyped is now the LLM depth round. If you understand the shape and rehearse the answer structure, the interview becomes a demonstration of your portfolio instead of a test of your memory.</p>
+
+<h2>The loop, in order</h2>
+<p>Recruiter screen. Then coding, which now mixes classic data structures with practical large language model tasks. You call an API, you parse a response, you orchestrate a call, you handle structured output, you debug a failing prompt. Then the machine learning and deep learning fundamentals round. Then the distinguishing round, which is LLM and generative AI depth. Then AI system design. Then a take-home or a project deep-dive. Then behavioral. Two independent 2026 sources agree on this shape. The difference between them is only in how they name the agent-platform specifics.</p>
+
+<h2>The six areas they probe, and what each one needs</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Area</th><th>What they probe</th><th>Your prep</th></tr></thead>
+<tbody>
+<tr><td>LLM basics</td><td>Transformers, attention, embeddings, generative vs discriminative</td><td>Explain why attention replaced RNNs, in parallelism and quadratic cost</td></tr>
+<tr><td>Prompt engineering</td><td>Zero-shot vs few-shot, structured instructions, versioning prompts</td><td>Treat a prompt as a versioned artifact, not a string</td></tr>
+<tr><td>RAG</td><td>Ingestion, chunking, embedding, retrieval, re-ranking, grounded eval</td><td>Explain your chunk-size choice and your retrieval metrics</td></tr>
+<tr><td>Evals</td><td>Golden sets, LLM-as-judge and its biases, offline vs production monitoring</td><td>Build the golden set, report precision and recall</td></tr>
+<tr><td>Agents and tool use</td><td>Tool schema design, loop mechanics, failure modes, stopping conditions</td><td>Explain when a fixed workflow beats an agent</td></tr>
+<tr><td>AI system design</td><td>Defend your choices, cost and latency budget, graceful failure</td><td>Your ticket-triage project is the mock of this round</td></tr>
+</tbody>
+</table></div>
+
+<h2>The answer structure that scores</h2>
+<p>For every machine learning concept, use the three-part structure. First, the definition. Second, how you would know it is happening, the symptom. Third, how you fix it, the lever. This structure is explicitly recommended by the 2026 prep sources, and it works because it proves you can reason, not just recite.</p>
+
+<p>Example, bias-variance. Definition. Bias is the error from overly simple assumptions. Variance is the error from overfitting to noise. Symptom. High bias is underfitting, both training and validation loss are high and close. High variance is overfitting, training loss is low and validation loss is high, a wide gap. Fix. For bias, add features, use a more expressive model. For variance, more data, regularization, dropout, early stopping, data augmentation.</p>
+
+<pre class="mermaid">
+flowchart LR
+    Q[Concept question] --> D[Definition]
+    D --> S{"How do I know it's happening?"}
+    S --> F{"How do I fix it?"}
+    F --> A[Answer = reason, not recite]
+</pre>
+
+<h2>The RAG-versus-fine-tune decision framework, named in interviews</h2>
+<p>This is the question that now appears at the LLM depth round. Use RAG when knowledge changes often, when the answer must cite sources, or when the corpus is private and large. Use fine-tuning when you need to change behavior, format, or style, or to cut the cost of stuffing context into every prompt. The two are not mutually exclusive. And sometimes the answer is neither, just prompt. Be able to say out loud which tool you would pick for a specific task, and why. The CPQ Knowledge Copilot project from Article 6 is your worked example of the RAG branch. The RAG-versus-fine-tune benchmark report is your worked example of the whole framework.</p>
+
+<h2>The system-design round, where your domain shines</h2>
+<p>The question is usually "design a document question-answer system," or "design a support assistant," or "design a research agent." The bar is defending your choices. Chunking and retrieval strategy. An evaluation plan before you trust it in production. A cost and latency budget. Graceful failure. This is where the ticket-triage project pays off. When they ask you to design a support assistant, you do not describe a hypothetical. You point to the repo and explain why you chose that routing, where it fails, what your stopping conditions are, and what you would change if retrieval returned the wrong context. You have already built it. That is the answer.</p>
+
+<div class="callout"><span class="title">The forward-deployed engineer variant</span>
+If the role is a forward-deployed engineer, like the Palantir-originated title that TCS is scaling, the loop adds live problem decomposition, customer scoping, and ownership under ambiguity. It is a behavioral round on top of the technical one. The prep is the same. Explain your decisions out loud, under time pressure, and show that you can scope a messy, under-specified problem.</div>
+
+<h2>The prep method that actually transfers</h2>
+<p>The best prep is explaining your own project decisions out loud. Why that chunk size. What the evaluation set looked like. What you would change if retrieval returned the wrong context. Do not memorize question banks. Build or revisit one small project for each weak area. Ten system-design reps on the support-assistant scenario, rehearsing your ticket-triage project as the answer, will do more than fifty flashcards.</p>
+
+<h2>The resume and LinkedIn moves that make it land</h2>
+<p>Rewrite the title line. Move from a support emphasis to "SAP and ERP, plus generative AI engineer, building LLM apps for enterprise ERP domains." Keep SAP as a keyword. Frame the support work in verbs of analysis and automation. Quantify the old job in new vocabulary. "Triage automation of S/4HANA CPQ tickets, saving X hours a week" is a machine-learning-adjacent story. Data curation, latency reduction, error categorization. Order the skills for both the applicant tracking system and the human. LLM application engineering, RAG, Python, Hugging Face, LangChain, OpenAI and Anthropic APIs, Docker, one cloud AI service, machine learning fundamentals, SQL, S/4HANA, SAP BTP, CPQ, ABAP, OData and CDS.</p>
+
+<h2>The close</h2>
+<p>The 2026 interview rewards the person who can ship and defend a system, not the person who can recite a syllabus. Your three projects from Article 6 are the evidence. Your CPQ domain is the differentiator. The three-part answer structure is the delivery. Rehearse the LLM depth round out loud, twenty times, until explaining your chunk-size choice feels as natural as explaining a CPQ discount rule. Then the interview is not a test. It is a conversation about work you already did.</p>
+</article></main>
+<footer>Article 10 · How to pass the AI interview · <a href="./09-freelancing.html">prev</a> · <a href="./11-tcs-internal.html">next: the lowest-risk path</a></footer>
+</body>
+</html>
